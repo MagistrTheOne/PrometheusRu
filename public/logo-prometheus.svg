@@ -1,0 +1,25 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Тёмный квадрат -->
+  <rect width="64" height="64" rx="8" fill="#1a1a1a"/>
+  
+  <!-- Глаз-камера -->
+  <g transform="translate(16, 20)">
+    <!-- Внешний круг глаза -->
+    <circle cx="16" cy="12" r="12" fill="none" stroke="white" stroke-width="2"/>
+    
+    <!-- Внутренний круг (зрачок) -->
+    <circle cx="16" cy="12" r="6" fill="white"/>
+    
+    <!-- Отражение в глазу -->
+    <circle cx="18" cy="10" r="2" fill="#1a1a1a"/>
+    
+    <!-- Векторные линии (ресницы) -->
+    <path d="M8 8 L10 6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M24 8 L22 6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M8 16 L10 14" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M24 16 L22 14" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Текст "P" в углу -->
+  <text x="8" y="56" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="white">P</text>
+</svg>
