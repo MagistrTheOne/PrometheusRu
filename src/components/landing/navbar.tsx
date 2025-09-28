@@ -21,7 +21,7 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white/5 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-center items-center relative">
           <div className="flex gap-6 overflow-x-auto scrollbar-hide">
             {navItems.map((item) => (
               <a
@@ -33,7 +33,9 @@ export function Navbar() {
               </a>
             ))}
           </div>
-          <LanguageSwitcher />
+          <div className="absolute right-0">
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </nav>
