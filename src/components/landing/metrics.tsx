@@ -1,21 +1,26 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTranslations } from "@/hooks/use-translations";
 
 export function Metrics() {
+  const { t } = useTranslations();
+  
   const metrics = [
     {
-      title: "Время отклика (p95)",
-      value: "< 1.2s",
-      description: "Гарантированная производительность"
+      title: t("metrics.p95"),
+      value: t("metrics.p95Value"),
+      description: "Guaranteed performance"
     },
     {
-      title: "Пропускная способность",
-      value: "45-60 токенов/с",
-      description: "Стабильная обработка запросов"
+      title: t("metrics.throughput"),
+      value: t("metrics.throughputValue"),
+      description: "Stable request processing"
     },
     {
-      title: "Стоимость обработки",
-      value: "~$0.00017 / 1k токенов",
-      description: "Оптимизированная экономика"
+      title: t("metrics.cost"),
+      value: t("metrics.costValue"),
+      description: "Optimized economics"
     }
   ];
 
@@ -23,7 +28,7 @@ export function Metrics() {
     <section id="metrics" className="py-20 px-4 scroll-mt-24">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
-          Ключевые метрики производительности
+          {t("metrics.title")}
         </h2>
         
         <div className="grid md:grid-cols-3 gap-6">

@@ -1,20 +1,27 @@
+"use client";
+
+import { useTranslations } from "@/hooks/use-translations";
+import { LanguageSwitcher } from "@/components/language-switcher";
+
 export function Navbar() {
+  const { t } = useTranslations();
+  
   const navItems = [
-    { label: "Обзор", href: "#hero" },
-    { label: "Метрики", href: "#metrics" },
-    { label: "ROI", href: "#roi" },
-    { label: "Интеграции", href: "#integrations" },
-    { label: "Процесс", href: "#process" },
-    { label: "RAG", href: "#rag" },
-    { label: "Модели", href: "#models" },
-    { label: "Почему мы", href: "#why-us" },
-    { label: "Контакты", href: "#contact" }
+    { label: t("nav.overview"), href: "#hero" },
+    { label: t("nav.metrics"), href: "#metrics" },
+    { label: t("nav.roi"), href: "#roi" },
+    { label: t("nav.integrations"), href: "#integrations" },
+    { label: t("nav.process"), href: "#process" },
+    { label: t("nav.rag"), href: "#rag" },
+    { label: t("nav.models"), href: "#models" },
+    { label: t("nav.whyUs"), href: "#why-us" },
+    { label: t("nav.contacts"), href: "#contact" }
   ];
 
   return (
     <nav className="sticky top-0 z-50 bg-white/5 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 py-4">
-        <div className="flex justify-center">
+        <div className="flex justify-between items-center">
           <div className="flex gap-6 overflow-x-auto scrollbar-hide">
             {navItems.map((item) => (
               <a
@@ -26,6 +33,7 @@ export function Navbar() {
               </a>
             ))}
           </div>
+          <LanguageSwitcher />
         </div>
       </div>
     </nav>

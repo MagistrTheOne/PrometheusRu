@@ -1,26 +1,31 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+"use client";
 
-const advantages = [
-  {
-    title: "Независимость от вендоров",
-    description: "Полный контроль над инфраструктурой и данными без привязки к внешним API"
-  },
-  {
-    title: "Детерминированный деплой",
-    description: "Предсказуемые результаты и стабильная работа в любой среде"
-  },
-  {
-    title: "Низкая стоимость инференса",
-    description: "Оптимизированная экономика с минимальными затратами на обработку"
-  }
-];
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTranslations } from "@/hooks/use-translations";
 
 export function WhyUs() {
+  const { t } = useTranslations();
+  
+  const advantages = [
+    {
+      title: t("whyUs.independence.title"),
+      description: t("whyUs.independence.description")
+    },
+    {
+      title: t("whyUs.deployment.title"),
+      description: t("whyUs.deployment.description")
+    },
+    {
+      title: t("whyUs.cost.title"),
+      description: t("whyUs.cost.description")
+    }
+  ];
+
   return (
     <section id="why-us" className="py-20 px-4 border-t border-white/10 scroll-mt-24">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
-          Почему мы
+          {t("whyUs.title")}
         </h2>
         
         <div className="grid md:grid-cols-3 gap-8">

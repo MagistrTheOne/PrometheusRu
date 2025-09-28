@@ -2,8 +2,11 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "@/hooks/use-translations";
 
 export function Hero() {
+  const { t } = useTranslations();
+  
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center px-4 py-16 scroll-mt-24">
       <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -21,10 +24,10 @@ export function Hero() {
         {/* Название и описание */}
         <div className="space-y-4">
           <h1 className="text-5xl md:text-6xl font-bold text-white">
-            Prometheus AGI
+            {t("hero.title")}
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Платформа для управления интеллектуальными агентами и решениями на основе LLM
+            {t("hero.subtitle")}
           </p>
         </div>
         
@@ -35,7 +38,7 @@ export function Hero() {
             className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg font-semibold"
             onClick={() => window.open('https://t.me/MagistrTheOne', '_blank')}
           >
-            Связаться в Telegram
+            {t("hero.cta")}
           </Button>
           <Button 
             variant="outline" 
@@ -43,7 +46,7 @@ export function Hero() {
             className="border-white/20 text-white hover:bg-white/10 px-8 py-3 text-lg"
             onClick={() => window.open('mailto:maxounyushko71@gmail.com', '_blank')}
           >
-            Получить материалы
+            {t("hero.download")}
           </Button>
         </div>
       </div>

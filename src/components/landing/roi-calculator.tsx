@@ -5,8 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { useTranslations } from "@/hooks/use-translations";
 
 export function ROICalculator() {
+  const { t } = useTranslations();
   const [investment, setInvestment] = useState(100000);
   const [economyPerYear, setEconomyPerYear] = useState(300000);
   const [years, setYears] = useState([3]);
@@ -19,12 +21,12 @@ export function ROICalculator() {
   return (
     <Card className="bg-white/5 backdrop-blur-md border-white/10">
       <CardHeader>
-        <CardTitle className="text-white text-lg">Калькулятор ROI</CardTitle>
+        <CardTitle className="text-white text-lg">{t("roi.calculator")}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="grid md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <Label htmlFor="investment" className="text-white">Инвестиции, $</Label>
+            <Label htmlFor="investment" className="text-white">{t("tools.tco.investment")}</Label>
             <Input
               id="investment"
               type="number"
@@ -34,7 +36,7 @@ export function ROICalculator() {
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="economy" className="text-white">Ежегодная экономия, $</Label>
+            <Label htmlFor="economy" className="text-white">{t("tools.tco.economy")}</Label>
             <Input
               id="economy"
               type="number"
