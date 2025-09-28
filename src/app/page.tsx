@@ -2,6 +2,7 @@ import { Navbar } from "@/components/landing/navbar";
 import { Hero } from "@/components/landing/hero";
 import { Metrics } from "@/components/landing/metrics";
 import { ROI } from "@/components/landing/roi";
+import { InvestorTools } from "@/components/landing/investor-tools";
 import { PerformanceCharts } from "@/components/landing/performance-charts";
 import { Integrations } from "@/components/landing/integrations";
 import { Process } from "@/components/landing/process";
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <Metrics />
       <ROI />
+      <InvestorTools />
       <PerformanceCharts />
       <Integrations />
       <Process />
