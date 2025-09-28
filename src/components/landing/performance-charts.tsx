@@ -7,13 +7,13 @@ import { performanceData, costData, comparisonData } from "@/lib/data";
 
 export function PerformanceCharts() {
   return (
-    <section className="py-16 px-4">
+    <section id="charts" className="py-20 px-4 border-t border-white/10 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
           Анализ производительности
         </h2>
         
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-10">
           {/* График p95 vs нагрузка */}
           <Card className="bg-white/5 backdrop-blur-md border-white/10">
             <CardHeader>
@@ -28,7 +28,7 @@ export function PerformanceCharts() {
                 className="h-[300px]"
               >
                 <LineChart data={performanceData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" />
                   <XAxis 
                     dataKey="load" 
                     stroke="rgba(255,255,255,0.6)"
@@ -65,7 +65,7 @@ export function PerformanceCharts() {
                 className="h-[300px]"
               >
                 <BarChart data={costData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" />
                   <XAxis 
                     dataKey="tokens" 
                     stroke="rgba(255,255,255,0.6)"

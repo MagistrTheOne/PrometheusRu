@@ -17,7 +17,7 @@ const ragFeatures = [
 
 export function RAG() {
   return (
-    <section className="py-16 px-4">
+    <section id="rag" className="py-20 px-4 border-t border-white/10 scroll-mt-24">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
           Retrieval-Augmented Generation (RAG)

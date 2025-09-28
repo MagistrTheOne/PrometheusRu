@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-16">
+    <section id="hero" className="min-h-screen flex items-center justify-center px-4 py-16 scroll-mt-24">
       <div className="max-w-4xl mx-auto text-center space-y-8">
         {/* Логотип */}
         <div className="flex justify-center">
@@ -20,7 +20,7 @@ export function Hero() {
         
         {/* Название и описание */}
         <div className="space-y-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-white">
+          <h1 className="text-5xl md:text-6xl font-bold text-white">
             Prometheus AGI
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">

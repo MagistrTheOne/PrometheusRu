@@ -26,7 +26,7 @@ const integrations = [
 
 export function Integrations() {
   return (
-    <section className="py-16 px-4">
+    <section id="integrations" className="py-20 px-4 border-t border-white/10 scroll-mt-24">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
           Интеграции с популярными платформами

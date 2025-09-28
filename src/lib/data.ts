@@ -14,18 +14,21 @@ export const performanceData = [
 ];
 
 export const costData = [
-  { tokens: 1000, cost: 0.00016 },
-  { tokens: 5000, cost: 0.00017 },
-  { tokens: 10000, cost: 0.00018 },
-  { tokens: 50000, cost: 0.00019 },
-  { tokens: 100000, cost: 0.00020 },
-  { tokens: 500000, cost: 0.00021 },
-  { tokens: 1000000, cost: 0.00022 }
+  { tokens: 1000, cost: 0.00012 },
+  { tokens: 5000, cost: 0.00013 },
+  { tokens: 10000, cost: 0.00014 },
+  { tokens: 50000, cost: 0.00015 },
+  { tokens: 100000, cost: 0.00016 },
+  { tokens: 500000, cost: 0.00017 },
+  { tokens: 1000000, cost: 0.00018 },
+  { tokens: 5000000, cost: 0.00019 },
+  { tokens: 10000000, cost: 0.00020 }
 ];
 
 export const comparisonData = [
-  { provider: "Prometheus AGI", p95: 1.2, cost: 0.00017 },
-  { provider: "OpenAI GPT-4", p95: 2.5, cost: 0.00030 },
-  { provider: "Claude 3", p95: 2.8, cost: 0.00025 },
-  { provider: "Gemini Pro", p95: 3.2, cost: 0.00020 }
+  { provider: "Prometheus AGI", p95: 1.2, cost: 0.00015 },
+  { provider: "OpenAI GPT-4o", p95: 2.8, cost: 0.00035 },
+  { provider: "Claude 3.5 Sonnet", p95: 3.2, cost: 0.00030 },
+  { provider: "Gemini 2.0 Flash", p95: 3.5, cost: 0.00025 },
+  { provider: "Anthropic Claude 4", p95: 2.9, cost: 0.00032 }
 ];
