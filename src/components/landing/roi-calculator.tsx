@@ -13,7 +13,8 @@ export function ROICalculator() {
   const [economyPerYear, setEconomyPerYear] = useState(300000);
   const [years, setYears] = useState([3]);
 
-  const totalEconomy = economyPerYear * years[0];
+  const currentYears = years[0] || 3;
+  const totalEconomy = economyPerYear * currentYears;
   const roi = ((totalEconomy - investment) / investment) * 100;
   const paybackYears = investment / economyPerYear;
   const multiplier = totalEconomy / investment;

@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Prometheus AGI
 
-## Getting Started
+Платформа для управления интеллектуальными агентами и решениями на основе LLM с детерминированным деплойментом.
 
-First, run the development server:
+## 🚀 Особенности
+
+- **Детерминированный деплой** - предсказуемые результаты в любой среде
+- **Низкая стоимость инференса** - оптимизированная экономика
+- **Независимость от вендоров** - полный контроль над инфраструктурой
+- **Быстрая интеграция** - time-to-value с 6 месяцев до 2 недель
+- **8.4× ROI** для Enterprise-интеграций
+
+## 🛠 Технический стек
+
+- **Next.js 15.5.4** с App Router
+- **React 19.1.0**
+- **TypeScript** с строгими настройками
+- **Tailwind CSS v4** с glass-morphism дизайном
+- **shadcn/ui** компоненты
+- **Next-intl** для интернационализации
+
+## 📦 Установка и запуск
 
 ```bash
+# Установка зависимостей
+npm install
+
+# Запуск в режиме разработки
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Сборка для продакшена
+npm run build
+
+# Запуск продакшен версии
+npm start
+
+# Проверка типов
+npm run typecheck
+
+# Линтинг
+npm run lint
+
+# Анализ бандла
+npm run build:analyze
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 Доступные скрипты
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `npm run dev` - запуск сервера разработки с Turbopack
+- `npm run build` - сборка приложения для продакшена
+- `npm run start` - запуск продакшен версии
+- `npm run lint` - проверка кода ESLint
+- `npm run typecheck` - проверка типов TypeScript
+- `npm run build:analyze` - анализ размера бандла
+- `npm run preview` - сборка и запуск для предварительного просмотра
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📱 Мобильная поддержка
 
-## Learn More
+Проект оптимизирован для мобильных устройств с:
+- Адаптивным дизайном
+- Бургер-меню для мобильной навигации
+- Оптимизированными изображениями (AVIF/WebP)
+- Ленивой загрузкой компонентов
 
-To learn more about Next.js, take a look at the following resources:
+## 🔒 Безопасность
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Content Security Policy
+- Security headers через middleware
+- Валидация форм через Server Actions
+- Защита от CSRF и XSS атак
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Деплой
 
-## Deploy on Vercel
+Проект готов к развертыванию на Vercel, Netlify или любой платформе с поддержкой Node.js.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Сборка для деплоя
+npm run build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Деплой на Vercel
+vercel --prod
+```
+
+## 📊 Производительность
+
+- Оптимизированные изображения с next/image
+- Динамические импорты для ленивой загрузки
+- Оптимизированная конфигурация Tailwind v4
+- Мониторинг Web Vitals
+
+## 🤝 Разработка
+
+1. Создайте виртуальное окружение (рекомендуется)
+2. Установите зависимости: `npm install`
+3. Запустите dev сервер: `npm run dev`
+4. Откройте [http://localhost:3000](http://localhost:3000)
+
+## 📝 Лицензия
+
+© 2025 MagistrTheOne. Все права защищены.

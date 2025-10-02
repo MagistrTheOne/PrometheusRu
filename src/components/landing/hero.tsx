@@ -17,6 +17,7 @@ export function Hero() {
             alt="Prometheus AGI"
             width={80}
             height={80}
+            priority
             className="mb-6"
           />
         </div>

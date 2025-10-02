@@ -42,6 +42,8 @@ export function Integrations() {
                     alt={integration.name}
                     width={48}
                     height={48}
+                    sizes="48px"
+                    loading="lazy"
                   />
                 </div>
                 <CardTitle className="text-white text-lg">

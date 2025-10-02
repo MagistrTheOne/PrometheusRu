@@ -1,11 +1,10 @@
-"use client";
-
 import { useTranslations } from "@/hooks/use-translations";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { MobileMenu } from "@/components/landing/mobile-menu";
 
 export function Navbar() {
   const { t } = useTranslations();
-  
+
   const navItems = [
     { label: t("nav.overview"), href: "#hero" },
     { label: t("nav.metrics"), href: "#metrics" },
@@ -21,8 +20,9 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white/5 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 py-4">
-        <div className="flex justify-center items-center relative">
-          <div className="flex gap-6 overflow-x-auto scrollbar-hide">
+        <div className="flex justify-between items-center">
+          {/* Десктопное меню */}
+          <div className="hidden md:flex gap-6 overflow-x-auto scrollbar-hide flex-1 justify-center">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -33,7 +33,14 @@ export function Navbar() {
               </a>
             ))}
           </div>
-          <div className="absolute right-0">
+
+          {/* Мобильное меню */}
+          <div className="md:hidden">
+            <MobileMenu />
+          </div>
+
+          {/* Language Switcher */}
+          <div className="hidden md:block">
             <LanguageSwitcher />
           </div>
         </div>

@@ -17,7 +17,8 @@ function TCOCalculator() {
   const [economy, setEconomy] = useState(300000);
   const [years, setYears] = useState([3]);
 
-  const totalEconomy = economy * years[0];
+  const currentYears = years[0] || 3;
+  const totalEconomy = economy * currentYears;
   const roi = ((totalEconomy - investment) / investment) * 100;
   const payback = investment / economy;
   const multiplier = totalEconomy / investment;
@@ -79,7 +80,8 @@ function CapacityPlanner() {
 
   const p95 = Math.max(0.6, 1.2 - 0.3 * Math.log10(concurrency) + (mode === "on-prem" ? 0.1 : 0));
   const nodes = Math.ceil(concurrency / 60);
-  const opex = nodes * (mode === "cloud" ? 1200 : 800) * regions[0];
+  const currentRegions = regions[0] || 2;
+  const opex = nodes * (mode === "cloud" ? 1200 : 800) * currentRegions;
 
   return (
     <Card className="bg-white/5 backdrop-blur-md border-white/10">
@@ -89,7 +91,7 @@ function CapacityPlanner() {
       <CardContent className="space-y-4">
         <div>
           <Label className="text-white text-xs">Конкурентность: {concurrency}</Label>
-          <Slider value={[concurrency]} onValueChange={([v]) => setConcurrency(v)} max={500} min={1} step={10} />
+          <Slider value={[concurrency]} onValueChange={([v]) => setConcurrency(v || 100)} max={500} min={1} step={10} />
         </div>
         <div>
           <Label className="text-white text-xs">Регионы: {regions[0]}</Label>
@@ -130,8 +132,9 @@ function CapacityPlanner() {
 function SLAConfigurator() {
   const [availability, setAvailability] = useState([99.5]);
 
-  const redundancy = Math.ceil((availability[0] - 99) * 10);
-  const uplift = Math.min(35, Math.max(5, (availability[0] - 99) * 20));
+  const currentAvailability = availability[0] || 99.5;
+  const redundancy = Math.ceil((currentAvailability - 99) * 10);
+  const uplift = Math.min(35, Math.max(5, (currentAvailability - 99) * 20));
 
   return (
     <Card className="bg-white/5 backdrop-blur-md border-white/10">
@@ -168,7 +171,7 @@ function SLAConfigurator() {
 function ProviderBenchmark() {
   const [provider, setProvider] = useState("Prometheus AGI");
 
-  const selectedProvider = comparisonData.find(p => p.provider === provider) || comparisonData[0];
+  const selectedProvider = comparisonData.find(p => p.provider === provider) || comparisonData[0] || { provider: "Prometheus AGI", p95: 1.2, cost: 0.00015 };
 
   return (
     <Card className="bg-white/5 backdrop-blur-md border-white/10">
@@ -193,11 +196,15 @@ function ProviderBenchmark() {
         </div>
         <div className="grid grid-cols-2 gap-2 text-center pt-2 border-t border-white/10">
           <div>
-            <div className="text-lg font-bold text-white">{selectedProvider.p95}s</div>
+            <div className="text-lg font-bold text-white">
+              {selectedProvider?.p95 !== undefined ? `${selectedProvider.p95}s` : '—'}
+            </div>
             <div className="text-xs text-gray-400">P95</div>
           </div>
           <div>
-            <div className="text-lg font-bold text-white">${selectedProvider.cost}</div>
+            <div className="text-lg font-bold text-white">
+              {selectedProvider?.cost !== undefined ? `$${selectedProvider.cost}` : '—'}
+            </div>
             <div className="text-xs text-gray-400">$/1k токенов</div>
           </div>
         </div>
